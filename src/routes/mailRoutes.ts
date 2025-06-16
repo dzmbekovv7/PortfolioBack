@@ -1,6 +1,9 @@
 import { Router } from 'express';
-import { sendEmail } from '../controllers/mailController';
+import { sendVerificationCode, verifyAndSendMessage } from '../controllers/mailController';
 
 const router = Router();
-router.post('/contact', sendEmail);
+
+router.post('/send-code', sendVerificationCode);
+router.post('/verify-and-send', verifyAndSendMessage);
+
 export default router;
